@@ -1,0 +1,20 @@
+<div *ngIf="hero">
+
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <label>name:
+      <!-- 双向-->
+      <input [(ngModel)]="hero.name" placeholder="name" />
+       <!-- component到页面-->
+      {{hero.name}}  
+      <input [value]="hero.name" />
+      {{1+1}}<span [hidden]="isUnchanged">changed</span>
+    </label>
+  </div>
+
+</div>
+<p>Today is {{'2018.1.11' | date}}</p>
+<p>Today is {{'2018.1.11as' | uppercase}}</p>
+<button (click)="save()">save</button>
+<button (click)="goBack()">go back</button>
